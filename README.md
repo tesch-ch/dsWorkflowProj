@@ -15,7 +15,7 @@ The app is realized on a kubernetes cluster and consists of 3 microservices and 
 - MongoDB (`mongodb/`)
   -  Managed by a deployment
   -  Attached service
-  -  Data is stored in a persistent volume.
+  -  Data is stored via persistent volume claim.
 -  News Scraper (`gatherer/`)
    -  Scrapes BBC, CNN, and, Foxnews via module Newspaper3k
    -  Cronjob runs each hour
