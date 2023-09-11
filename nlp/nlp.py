@@ -61,10 +61,12 @@ for document in collection.find(query):
     
     try:
         # Perform NER on article title
-        (entities, entities_all) = misc.perform_ner(document['title'], ner_pipeline)
+        (entities, entities_all) = misc.perform_ner(document['title'],
+                                                    ner_pipeline)
         
         # Perform classification on article text
-        (label, labels_all) = misc.perform_clf(document['text'], clf_tokenizer, clf_model)
+        (label, labels_all) = misc.perform_clf(document['text'], clf_tokenizer,
+                                               clf_model)
 
         # Update document in collection
         document['entities'] = entities

@@ -70,7 +70,8 @@ def perform_clf(text, tokenizer, model):
                        return_tensors="pt")
 
     # Make prediction
-    outputs = model(inputs["input_ids"], attention_mask=inputs["attention_mask"])
+    outputs = model(inputs["input_ids"],
+                    attention_mask=inputs["attention_mask"])
 
     # Get predicted class probabilities
     predicted_probabilities = torch.softmax(outputs.logits, dim=1)
@@ -82,11 +83,12 @@ def perform_clf(text, tokenizer, model):
     # with MongoDB (maybe json encoder?)
     class_probabilities = [float(prob) for prob in class_probabilities]
 
-    # Create a dictionary. Class label keys, values are respective probabilities
+    # Create a dict. Class label keys, values are respective probabilities
     class_probabilities_dict = dict(zip(class_labels, class_probabilities))
 
     # Find the class label with the highest probability
-    predicted_class = max(class_probabilities_dict, key=class_probabilities_dict.get)
+    predicted_class = max(class_probabilities_dict,
+                          key=class_probabilities_dict.get)
 
     return (predicted_class, class_probabilities_dict)
 
