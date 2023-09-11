@@ -1,11 +1,11 @@
 # dsWorkflowProj
 
-This project realizes a very basic newsreader app utilizing a microservices architecture.
+This project realizes a simple and basic newsreader app utilizing a microservices architecture.
 The news outlets BBC, CNN, and Foxnews are scraped for articles, which are stored into a MongoDB.
 On said articles two nlp tasks are performed (classification into news categories and named entity recognition).
 Users can access and browse the processed articles through a web app.  
 
-In general this project is meant to gain first experiences and familiarize with the infrastructure site of ds workflows and applications, especially working with a kubernetes cluster, overcoming issues such as working with a purely remotely deployed system etc... 
+In general this project is meant to gain first experiences and familiarize with the infrastructure aspects of ds workflows and applications, especially working with a kubernetes cluster, overcoming issues such as working with a purely remote deployed system, different debugging strategies, etc... 
  
 
 ## Basic Structure
@@ -20,9 +20,11 @@ The app is realized on a kubernetes cluster and consists of 3 microservices and 
    -  Scrapes BBC, CNN, and, Foxnews via module Newspaper3k
    -  Cronjob runs each hour
    -  Stores articles in the db via pymongo
+   -  Checks if article associated url exists in db, if not article is downloaded and added to db (prevent redundant scraping/downloads/db writes)
    -  15 k articles have been scraped within 14 days, after minimal cleaning 10 k articles remain
 -  NLP (`nlp/`)
    -  Gets articles from the db, processes these and writes them back to the db
+   -  Only processes new articles of course
    -  Named entity recognition
       -  Performed on article title
       -  Off the shelf BERT model
@@ -45,15 +47,14 @@ The app is realized on a kubernetes cluster and consists of 3 microservices and 
    -  Accessed by port forwarding (listens on port 5000)
 
 ## Result
-- App works and runs without crashing
+- App works and runs continuously without crashing for days
 - 15 k articles have been scraped within 14 days, after minimal cleaning 10 k articles remain
-
+- Sampling processed articles by hand suggests NER and classification work in an adequate manner
 
 
 ## Ideas/discussion/issues
-- improve web app
-- batch processing for parallel processing
-- batch processing gpu usage...
+- improve web app, provide simple download dataset function
+- think about batch processing for parallel processing, batch processing gpu usage...
 - "back to the roots", keep it simple, working with old python versions, no type hinting...
 - postprocessing unique named entities etc...
 - Encoding issues had to be fixed (Encoding issue: cannot encode object: 0.78782666, of type: <class 'numpy.float32'>)
