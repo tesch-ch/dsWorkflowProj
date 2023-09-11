@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: flask-pod
+spec:
+  restartPolicy: Never  # Set to "Never" to prevent automatic restarts
+  containers:
+    - name: flask-container
+      image: chtedock/flask-app
+      ports:
+        - containerPort: 5000  # Port your Flask app is listening on

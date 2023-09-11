@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gather-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gather-app
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: gather-app
+    spec:
+      containers:
+        - name: gather-container
+          image: chtedock/gather-script

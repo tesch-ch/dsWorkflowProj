@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: transformers-pod
+spec:
+  containers:
+    - name: transformers-container
+      image: huggingface/transformers-pytorch-cpu
+      ports:
+        - containerPort: 8888
+      command:
+        - "/bin/sh"
+        - "-c"
+        - "jupyter notebook --ip=0.0.0.0 --no-browser --NotebookApp.token='' --allow-root"

@@ -1,0 +1,9 @@
+- docker build -t chtedock/nlp-script .
+- docker push chtedock/nlp-script
+
+- kubectl apply -f nlp-pod.yaml
+
+- kubectl logs -f nlp-pod
+
+- kubectl apply -f nlp-cronjob.yaml
+

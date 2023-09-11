@@ -1,0 +1,2 @@
+- kubectl apply -f mongodb-pvc.yaml
+- kubectl apply -f mongodb-deployment.yaml

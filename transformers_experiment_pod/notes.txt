@@ -1,0 +1,7 @@
+- kubectl apply -f transformers-pod.yaml
+
+- kubectl get pods
+
+- kubectl port-forward transformers-pod 8888:8888
+
+- http://localhost:8888

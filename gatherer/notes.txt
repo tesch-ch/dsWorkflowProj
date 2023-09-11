@@ -1,0 +1,6 @@
+- docker build -t chtedock/gather-script .
+- docker push chtedock/gather-script
+
+- kubectl apply -f gather-pod.yaml
+
+- kubectl apply -f gather-cronjob.yaml

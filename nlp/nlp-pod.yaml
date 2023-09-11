@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nlp-pod
+spec:
+  containers:
+    - name: nlp-container
+      image: chtedock/nlp-script

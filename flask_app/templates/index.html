@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pandas DataFrame Viewer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Pandas DataFrame Viewer</h2>
+        <form method="POST" action="/update_table">
+            <div class="form-group">
+                <label for="category">Filter by Category:</label>
+                <select class="form-control" id="category" name="category">
+                    <option value="">All Categories</option>
+                    {% for category in categories %}
+                    <option value="{{ category }}">{{ category }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Select Columns to Display:</label>
+                {% for column in columns %}
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="{{ column }}" name="columns" value="{{ column }}">
+                    <label class="form-check-label" for="{{ column }}">{{ column }}</label>
+                </div>
+                {% endfor %}
+            </div>
+            <button type="submit" class="btn btn-primary">Apply Filters</button>
+        </form>
+        <hr>
+        <div class="table-responsive">
+            <div id="data-table">
+                {{ table|safe }}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

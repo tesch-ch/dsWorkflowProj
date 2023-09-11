@@ -1,0 +1,14 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: nlp-cronjob
+spec:
+  schedule: "0 */3 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: nlp-container
+              image: chtedock/nlp-script
+          restartPolicy: Never

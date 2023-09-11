@@ -1,0 +1,67 @@
+<mxfile host="Electron" modified="2023-09-11T12:37:57.466Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.8 Chrome/114.0.5735.289 Electron/25.5.0 Safari/537.36" etag="VNSgfS0OPUAbmCC27Ncq" version="21.6.8" type="device">
+  <diagram name="Page-1" id="jByNCe-jRFr5rgD8seuW">
+    <mxGraphModel dx="989" dy="582" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="skCpp-_NhNIgum5z8DMP-24" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="140" y="300" width="480" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="skCpp-_NhNIgum5z8DMP-19" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" vertex="1" parent="skCpp-_NhNIgum5z8DMP-24">
+          <mxGeometry y="40" width="480" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="skCpp-_NhNIgum5z8DMP-1" value="&lt;b&gt;MongoDB&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;holds scraped and processed news articles&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="skCpp-_NhNIgum5z8DMP-24">
+          <mxGeometry x="180" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="skCpp-_NhNIgum5z8DMP-2" value="Persistent Volume" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="skCpp-_NhNIgum5z8DMP-24">
+          <mxGeometry x="180" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="skCpp-_NhNIgum5z8DMP-3" value="&lt;b&gt;NLP&lt;/b&gt;&lt;br style=&quot;font-size: 11px;&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;Classification + NER&lt;br&gt;&lt;/span&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;via HF transformers&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="skCpp-_NhNIgum5z8DMP-24">
+          <mxGeometry x="340" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="skCpp-_NhNIgum5z8DMP-4" value="&lt;b&gt;News Scraper&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;BBC, CNN, Foxnews&lt;br&gt;via Newspaper3k&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="skCpp-_NhNIgum5z8DMP-24">
+          <mxGeometry x="20" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="skCpp-_NhNIgum5z8DMP-6" value="&lt;b&gt;Flask App&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;UI for article browsing&lt;br&gt;via flask&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="skCpp-_NhNIgum5z8DMP-24">
+          <mxGeometry x="180" y="60" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="skCpp-_NhNIgum5z8DMP-11" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="skCpp-_NhNIgum5z8DMP-24" source="skCpp-_NhNIgum5z8DMP-1" target="skCpp-_NhNIgum5z8DMP-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="300" y="210" as="sourcePoint" />
+            <mxPoint x="350" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="skCpp-_NhNIgum5z8DMP-16" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="skCpp-_NhNIgum5z8DMP-24">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="239.76" y="260" as="sourcePoint" />
+            <mxPoint x="239.76" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="skCpp-_NhNIgum5z8DMP-17" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="skCpp-_NhNIgum5z8DMP-24" source="skCpp-_NhNIgum5z8DMP-1" target="skCpp-_NhNIgum5z8DMP-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="300" y="210" as="sourcePoint" />
+            <mxPoint x="350" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="skCpp-_NhNIgum5z8DMP-18" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="skCpp-_NhNIgum5z8DMP-24">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="189.76" as="sourcePoint" />
+            <mxPoint x="180" y="189.76" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="skCpp-_NhNIgum5z8DMP-20" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;bht_data_science cluster&lt;br&gt;(namespace s91266)&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="skCpp-_NhNIgum5z8DMP-24">
+          <mxGeometry x="20" y="290" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="skCpp-_NhNIgum5z8DMP-22" value="Port 5000&lt;br&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="skCpp-_NhNIgum5z8DMP-24">
+          <mxGeometry x="200" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="skCpp-_NhNIgum5z8DMP-23" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="skCpp-_NhNIgum5z8DMP-24">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="239.66000000000003" y="60" as="sourcePoint" />
+            <mxPoint x="239.66000000000003" y="20" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

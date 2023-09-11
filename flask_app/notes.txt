@@ -1,0 +1,10 @@
+- docker build -t chtedock/flask-app .
+- docker push chtedock/flask-app
+
+- kubectl apply -f flask-pod.yaml
+
+- kubectl logs -f flask-pod
+
+- kubectl port-forward flask-pod 5000:5000
+
+

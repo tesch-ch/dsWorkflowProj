@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: gather-pod
+spec:
+  containers:
+    - name: gather-container
+      image: chtedock/gather-script
