@@ -47,7 +47,7 @@ The app is realized on a kubernetes cluster and consists of 3 microservices and 
    -  Accessed by port forwarding (listens on port 5000)
 
 ## Result
-- App works and runs continuously without crashing for days
+- Success, app works and runs continuously without crashing for two weeks
 - 15 k articles have been scraped within 14 days, after minimal cleaning 10 k articles remain
 - Sampling processed articles by hand suggests NER and classification work in an adequate manner
 
