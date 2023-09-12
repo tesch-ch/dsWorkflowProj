@@ -48,16 +48,20 @@ The app is realized on a kubernetes cluster and consists of 3 microservices and 
 
 ## Result
 - Success, app works and runs continuously without crashing for two weeks
-- 15 k articles have been scraped within 14 days, after minimal cleaning 10 k articles remain
+- 15+ k articles have been scraped within 14 days, after minimal cleaning 10+ k articles remain
 - Sampling processed articles by hand suggests NER and classification work in an adequate manner
 
 
 ## Ideas/discussion/issues
 - improve web app, provide simple download dataset function
+- clean db of bloat (scraped ads etc.)
+- more sophisticated check if article already exists (simply by url can lead to article existing multiple times, as different urls can lead to same article)
 - think about batch processing for parallel processing, batch processing gpu usage...
-- "back to the roots", keep it simple, working with old python versions, no type hinting...
 - postprocessing unique named entities etc...
-- Encoding issues had to be fixed (Encoding issue: cannot encode object: 0.78782666, of type: <class 'numpy.float32'>)
-- use tqdm...
-- UnicodeEncodeError: 'ascii' codec can't encode character '\u2019' in position 58: ordinal not in range(128)
-- Suddenly no more print and logs displayed in pod logs (solution set ENV PYTHONUNBUFFERED=1)
+- Random selection of issues when developing
+  - Suddenly no more print and logs displayed in pod logs (solution set ENV PYTHONUNBUFFERED=1)
+  - Keep code simple, debugging is not as easy as in a local setup
+  - working with old python versions (latest transformers cpu container utilizes python 3.6), so type hinting in python 3.10 style causes errors...
+  - Encoding issues had to be fixed (pymongo maybe json encoder? can sometimes not encode numpy floats) (Encoding issue: cannot encode object: 0.78782666, of type: <class 'numpy.float32'>)
+  - use tqdm...
+  - UnicodeEncodeError: 'ascii' codec can't encode character '\u2019' in position 58: ordinal not in range(128)
