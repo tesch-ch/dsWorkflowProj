@@ -18,7 +18,7 @@ The app is realized on a kubernetes cluster and consists of 3 microservices and 
   -  Data is stored via persistent volume claim.
 -  News Scraper (`gatherer/`)
    -  Scrapes BBC, CNN, and, Foxnews via module Newspaper3k
-   -  Cronjob runs each hour
+   -  Cronjob runs every hour
    -  Stores articles in the db via pymongo
    -  Checks if article associated url exists in db, if not article is downloaded and added to db (prevent redundant scraping/downloads/db writes)
    -  15 k articles have been scraped within 14 days, after minimal cleaning 10 k articles remain
@@ -37,7 +37,7 @@ The app is realized on a kubernetes cluster and consists of 3 microservices and 
          -  https://huggingface.co/Softechlb/articles_classification
    -  Utilizes only CPU (does not hog GPU)
    -  Overall inference time per article approx 1.5 s
-   -  Cronjob runs each 3 hours
+   -  Cronjob runs every 3 hours
    -  Processing only performed if there are more than 10 new articles
    -  Extensive logging (useful when processing thousands of articles)
 -  Flask App (`flask_app/`)
